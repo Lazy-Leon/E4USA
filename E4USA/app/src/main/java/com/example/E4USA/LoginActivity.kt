@@ -1,7 +1,6 @@
 package com.example.E4USA
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
@@ -9,15 +8,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 
-
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     private lateinit var userEmail: EditText
     private lateinit var userPassword: EditText
     private lateinit var loginBtn: Button
-    private lateinit var registarBtn: Button
     private lateinit var progressBar: ProgressBar
     private var mAuth: FirebaseAuth? = null
 
@@ -30,11 +28,6 @@ class MainActivity : AppCompatActivity() {
         initializeUI()
 
         loginBtn.setOnClickListener { loginUserAccount() }
-
-        registarBtn.setOnClickListener {
-            startActivity(Intent(this@MainActivity, RegistrationActivity::class.java))
-        }
-
     }
 
     private fun loginUserAccount() {
@@ -76,5 +69,4 @@ class MainActivity : AppCompatActivity() {
         loginBtn = findViewById(R.id.login)
         progressBar = findViewById(R.id.progressBar)
     }
-
 }
