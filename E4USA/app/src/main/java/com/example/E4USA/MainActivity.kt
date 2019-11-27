@@ -74,6 +74,7 @@ class MainActivity : AppCompatActivity() {
         userPassword = findViewById(R.id.password)
 
         loginBtn = findViewById(R.id.login)
+        registarBtn = findViewById(R.id.register)
         progressBar = findViewById(R.id.progressBar)
     }
 
