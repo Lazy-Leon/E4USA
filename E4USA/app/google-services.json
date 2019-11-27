@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "979892389462",
+    "firebase_url": "https://e4usa-dcabf.firebaseio.com",
+    "project_id": "e4usa-dcabf",
+    "storage_bucket": "e4usa-dcabf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979892389462:android:1befbf118753505e25ddf7",
+        "android_client_info": {
+          "package_name": "com.example.E4USA"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979892389462-d3osi0tq7slu8ps8p5nukl0nfpgvhivm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOGjcN2JX6c705GTOIdnhr7180DoKt6SU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979892389462-d3osi0tq7slu8ps8p5nukl0nfpgvhivm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
