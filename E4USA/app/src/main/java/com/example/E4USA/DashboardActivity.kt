@@ -33,6 +33,11 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        listViewProjects = findViewById(R.id.listViewProjects)
+
+
+
+
         mAuth = FirebaseAuth.getInstance()
 
     }

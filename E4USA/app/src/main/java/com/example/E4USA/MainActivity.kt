@@ -21,18 +21,26 @@ import com.google.firebase.database.ValueEventListener
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        const val STUDENT_NAME = "com.example.E4USA.studentname"
+        const val STUDENT_ID = "com.example.E4USA.student_id"
+    }
+
 
     private lateinit var userEmail: EditText
     private lateinit var userPassword: EditText
     private lateinit var loginBtn: Button
     private lateinit var registarBtn: Button
     private lateinit var progressBar: ProgressBar
-    private lateinit var listViewProjects: ListView
+    private lateinit var listViewStudents: ListView
 
     private var mAuth: FirebaseAuth? = null
     private lateinit var dbref: DatabaseReference
+    private lateinit var changingref: DatabaseReference
 
-    private lateinit var projects: MutableList<Project>
+    private lateinit var students: MutableList<Int>
+    private lateinit var allStudents: MutableList<Student>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,12 +58,72 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+    override fun onStart() {
+        super.onStart()
+        //attaching value event listener
+        dbref = FirebaseDatabase.getInstance().getReference("Users/UserID")
+        dbref.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+                //clearing the previous artist list
+                students.clear()
+                allStudents = ArrayList()
+
+                //iterating through all the nodes
+                for (postSnapshot in dataSnapshot.children) {
+                    //getting artist
+                    val student_id = postSnapshot.getValue<Int>(Int::class.java)
+
+                    //adding author to the list
+                    students.add(student_id!!)
+                }
+
+                //creating adapter
+                //val authorAdapter = AuthorList(this@MainActivity, authors)
+                //attaching adapter to the listview
+                //listViewAuthors.adapter = authorAdapter
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+
+            }
+        })
+
+        val i =0
+        for (i in students){
+            changingref = (FirebaseDatabase.getInstance().getReference("Users/UserID/"+i))
+            changingref.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+                    //clearing the previous artist list
+                    allStudents.clear()
+
+                    //iterating through all the nodes
+                    for (postSnapshot in dataSnapshot.children) {
+                        //getting artist
+                        val studentObj = postSnapshot.getValue<Student>(Student::class.java)
+                        //adding author to the list
+                        allStudents.add(studentObj!!)
+                    }
+
+                    //creating adapter
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {
+
+                }
+            })
+
+        }
+
+    }
 
 
     private fun loginUserAccount() {
 
         val email: String = userEmail.text.toString()
         val password: String = userPassword.text.toString()
+        var targetStudent:Student ?= null
 
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(applicationContext, "Please enter email...", Toast.LENGTH_LONG).show()
@@ -78,27 +146,18 @@ class MainActivity : AppCompatActivity() {
                         DashboardActivity::class.java
                     )
 
-                    var all_userids: MutableList<Int>
-                    dbref = FirebaseDatabase.getInstance().getReference("Users/UserID")
-
-                    dbref.addValueEventListener(object : ValueEventListener {
-                        override fun onDataChange(dataSnapshot: DataSnapshot) {
-                            // This method is called once with the initial value and again
-                            // whenever data at this location is updated.
-                            val value = dataSnapshot.getValue(String::class.java)
+                    for (usr in allStudents){
+                        if (usr.email == email)
+                        {
+                            targetStudent = usr
 
                         }
+                    }
+//
 
-                        override fun onCancelled(error: DatabaseError) {
-                            // Failed to read value
-                            Log.i(
-                                "Failed to read value.",
-                                "Failed to read value."
-                            )
-                        }
-                    })
+                    dashboard.putExtra("TargetStudent", targetStudent!!.ID)
 
-                    //dashboard.putExtra("UserId",  )
+
 
                     // Use the Intent to start the HelloAndroid Activity
                     startActivity(dashboard)
