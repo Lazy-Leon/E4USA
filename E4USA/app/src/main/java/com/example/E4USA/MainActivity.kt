@@ -1,25 +1,38 @@
 package com.example.E4USA
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ProgressBar
-import android.widget.Toast
+import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
+import androidx.appcompat.app.AlertDialog
+import com.google.firebase.database.*
+import java.util.*
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.ValueEventListener
+
+
 
 
 class MainActivity : AppCompatActivity() {
+
 
     private lateinit var userEmail: EditText
     private lateinit var userPassword: EditText
     private lateinit var loginBtn: Button
     private lateinit var registarBtn: Button
     private lateinit var progressBar: ProgressBar
+    private lateinit var listViewProjects: ListView
+
     private var mAuth: FirebaseAuth? = null
+    private lateinit var dbref: DatabaseReference
+
+    private lateinit var projects: MutableList<Project>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +45,8 @@ class MainActivity : AppCompatActivity() {
         loginBtn.setOnClickListener { loginUserAccount() }
 
         registarBtn.setOnClickListener {
-            startActivity(Intent(this@MainActivity, RegistrationActivity::class.java))
+            startActivity(Intent(this@MainActivity, RegistrationActivity::class.java ))
+
         }
 
     }
@@ -56,9 +70,40 @@ class MainActivity : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 progressBar.visibility = View.GONE
                 if (task.isSuccessful) {
-                    Toast.makeText(applicationContext, "Login successful!", Toast.LENGTH_LONG)
-                        .show()
-                    //startActivity(Intent(this@LoginActivity, DashboardActivity::class.java))
+//                    Toast.makeText(applicationContext, "Login successful!", Toast.LENGTH_LONG)
+//                        .show()
+
+                    val dashboard = Intent(
+                        this@MainActivity,
+                        DashboardActivity::class.java
+                    )
+
+                    var all_userids: MutableList<Int>
+                    dbref = FirebaseDatabase.getInstance().getReference("Users/UserID")
+
+                    dbref.addValueEventListener(object : ValueEventListener {
+                        override fun onDataChange(dataSnapshot: DataSnapshot) {
+                            // This method is called once with the initial value and again
+                            // whenever data at this location is updated.
+                            val value = dataSnapshot.getValue(String::class.java)
+
+                        }
+
+                        override fun onCancelled(error: DatabaseError) {
+                            // Failed to read value
+                            Log.i(
+                                "Failed to read value.",
+                                "Failed to read value."
+                            )
+                        }
+                    })
+
+                    //dashboard.putExtra("UserId",  )
+
+                    // Use the Intent to start the HelloAndroid Activity
+                    startActivity(dashboard)
+
+
                 } else {
                     Toast.makeText(
                         applicationContext,

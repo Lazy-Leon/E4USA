@@ -11,23 +11,23 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 
-class Info : AppCompatActivity() {
+class InfoActivity : AppCompatActivity() {
 
 
-    internal lateinit var buttonBack: Button
+  internal lateinit var buttonBack: Button
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_info)
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_info)
 
-        buttonBack= findViewById<View>(R.id.backbutton) as Button
+    buttonBack= findViewById<View>(R.id.backbutton) as Button
 
-        buttonBack.setOnClickListener {
-            val intent = Intent(applicationContext, DashboardActivity::class.java)
+    buttonBack.setOnClickListener {
+      val intent = Intent(applicationContext, DashboardActivity::class.java)
 
-            startActivity(intent)
-        }
-
+      startActivity(intent)
     }
+
+  }
 
 }
