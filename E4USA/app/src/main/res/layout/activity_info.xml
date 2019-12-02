@@ -7,7 +7,6 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@+id/mLlayoutBottomButtons"
 
         >
 
@@ -57,7 +56,76 @@
             android:textColor="#000000"
             android:textSize="14sp" />
 
+        <RelativeLayout
+            android:id="@+id/bottomstuff"
+            android:layout_width="wrap_content"
+            android:layout_height="757dp">
 
+
+            <LinearLayout
+                android:id="@+id/mLlayoutmiddleButtons"
+                android:layout_width="match_parent"
+                android:layout_height="182dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="14dp">
+
+                <Button
+                    android:id="@+id/buttona"
+                    android:layout_width="409dp"
+                    android:layout_height="114dp"
+                    android:layout_weight="1"
+                    android:background="#8FEBF3"
+                    android:text="Component I" />
+
+                <Button
+                    android:id="@+id/buttonb"
+                    android:layout_width="409dp"
+                    android:layout_height="114dp"
+                    android:layout_weight="1"
+                    android:background="#E91E63"
+                    android:text="Component II" />
+
+                <Button
+                    android:id="@+id/buttonc"
+                    android:layout_width="409dp"
+                    android:layout_height="114dp"
+                    android:layout_weight="1"
+                    android:background="#DD2196F3"
+                    android:text="Component III" />
+
+                <Button
+                    android:id="@+id/buttond"
+                    android:layout_width="409dp"
+                    android:layout_height="114dp"
+                    android:layout_weight="1"
+                    android:background="#2CCC32"
+                    android:text="Component IV" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/mLlayoutBottomButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+
+            <Button
+                android:id="@+id/backbutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#d4d1d4"
+                android:drawableLeft="@drawable/ic_dashboard_black_24dp"
+                android:textColor="#ff0000"
+                android:text="Back" />
+
+
+        </LinearLayout>
 
 
     </RelativeLayout>
@@ -71,32 +139,14 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="373dp"
-            android:layout_height="203dp"
+            android:layout_width="270dp"
+            android:layout_height="201dp"
             android:layout_centerInParent="true"
 
             app:srcCompat="@drawable/icon1" />
 
+
     </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/mLlayoutBottomButtons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:gravity="center|bottom">
-
-        <Button
-            android:id="@+id/backbutton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#d4d1d4"
-            android:drawableLeft="@drawable/ic_dashboard_black_24dp"
-            android:textColor="#ff0000"
-            android:text="Back" />
-
-    </LinearLayout>
 
 
 </RelativeLayout>

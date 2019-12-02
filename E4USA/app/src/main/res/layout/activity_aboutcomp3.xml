@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+
+        >
+
+        <TextView
+            android:id="@+id/component1"
+            android:layout_width="277dp"
+            android:layout_height="115dp"
+            android:gravity="center_vertical|right"
+
+            android:text="Component III"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+
+        <TextView
+            android:id="@+id/component1.1"
+            android:layout_width="294dp"
+            android:layout_height="171dp"
+            android:gravity="center_vertical|right"
+
+            android:text="Construction and testing"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/component1.2"
+            android:layout_width="248dp"
+            android:layout_height="213dp"
+            android:layout_marginStart="4dp"
+
+            android:layout_marginBottom="65dp"
+            android:gravity="center_vertical|right"
+            android:text="a prototype"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/compo1c"
+            android:layout_width="305dp"
+            android:layout_height="140dp"
+
+
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="369dp"
+            android:layout_marginEnd="74dp"
+            app:srcCompat="@drawable/comp3c" />
+
+        <ImageView
+            android:id="@+id/compo1a"
+            android:layout_width="299dp"
+            android:layout_height="142dp"
+
+
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="79dp"
+            android:layout_marginBottom="310dp"
+            app:srcCompat="@drawable/comp3a" />
+
+        <ImageView
+            android:id="@+id/compo1b"
+            android:layout_width="305dp"
+            android:layout_height="134dp"
+
+
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="262dp"
+            android:layout_marginEnd="76dp"
+            app:srcCompat="@drawable/comp3b" />
+
+        <LinearLayout
+            android:id="@+id/mLlayoutBottomButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+
+            <Button
+                android:id="@+id/backbutton"
+                android:layout_below="@id/buttonswitchUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#d4d1d4"
+                android:drawableLeft="@drawable/ic_arrow_back_red_24dp"
+                android:text="Back"
+                android:textColor="#ff0000"/>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>

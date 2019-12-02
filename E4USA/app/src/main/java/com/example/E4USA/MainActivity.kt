@@ -15,6 +15,10 @@ import java.util.*
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.ValueEventListener
+
+
+
+
 class MainActivity : AppCompatActivity() {
 
     companion object {
@@ -34,26 +38,31 @@ class MainActivity : AppCompatActivity() {
     private lateinit var dbref: DatabaseReference
     private lateinit var changingref: DatabaseReference
 
-    private lateinit var students: MutableList<Int>
+    private lateinit var students: MutableList<Student>
     private lateinit var allStudents: MutableList<Student>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        students =  mutableListOf()
+        students =  ArrayList()
         allStudents = ArrayList()
 
+        dbref = FirebaseDatabase.getInstance().getReference("Users/UserID")
+        changingref =  FirebaseDatabase.getInstance().getReference()
         mAuth = FirebaseAuth.getInstance()
 
         initializeUI()
 
         loginBtn.setOnClickListener {
             loginUserAccount()
+
+
         }
 
         registarBtn.setOnClickListener {
             startActivity(Intent(this@MainActivity, RegistrationActivity::class.java ))
+
         }
 
 
@@ -65,6 +74,7 @@ class MainActivity : AppCompatActivity() {
 
         //attaching value event listener
         dbref = FirebaseDatabase.getInstance().getReference("Users/UserID")
+//        var child = dbref
         dbref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
@@ -75,10 +85,12 @@ class MainActivity : AppCompatActivity() {
                 //iterating through all the nodes
                 for (postSnapshot in dataSnapshot.children) {
                     //getting artist
-                    val student_id = postSnapshot.getValue(Student::class.java)
+                    //print(postSnapshot.getValue())
+                    val student_id = postSnapshot.getValue<Student>(Student::class.java)
+                    Log.d("Inside Loop Message","found the user "+student_id!!.ProjectList)
 
                     //adding author to the list
-                    allStudents.add(student_id!!)
+                    students.add(student_id!!)
                 }
 
                 //creating adapter
@@ -141,8 +153,8 @@ class MainActivity : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 progressBar.visibility = View.GONE
                 if (task.isSuccessful) {
-//                    Toast.makeText(applicationContext, "Login successful!", Toast.LENGTH_LONG)
-//                        .show(0
+                    Toast.makeText(applicationContext, "Login successful!", Toast.LENGTH_LONG)
+                        .show()
 
                     // I am making an intent for the dashboard to take on
                     val dashboard = Intent(
@@ -150,11 +162,17 @@ class MainActivity : AppCompatActivity() {
                         DashboardActivity::class.java
                     )
 
+                    //Log.d("Debug Message","found the user"+allStudents.size)
+
+
                     //getting the the logged-in user's object, aka the right student
-                    for (usr in allStudents){
+                    for (usr in students){
                         if (usr.email == email)
                         {
+//                            Log.d("Debug Message","found the user "+usr)
                             targetStudent = usr
+                            Log.d("Debug Message","found the user "+targetStudent)
+
 
                         }
                     }
@@ -182,6 +200,7 @@ class MainActivity : AppCompatActivity() {
 
         loginBtn = findViewById(R.id.login)
         registarBtn = findViewById(R.id.register)
+        progressBar = findViewById(R.id.progressBar)
     }
 
 }

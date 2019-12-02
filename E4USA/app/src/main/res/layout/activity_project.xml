@@ -86,14 +86,14 @@
         android:id="@+id/Grades"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_centerVertical="true"
         android:layout_above="@+id/Assignments"
-        android:layout_marginBottom="-92dp"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="-100dp"
         android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/ic_grade_black_24dp"
         android:gravity="left|center_vertical"
         android:text="     Grades"
-        android:drawableLeft="@drawable/ic_grade_black_24dp"
-        android:textColor="#ff0000"/>
+        android:textColor="#ff0000" />
 
     <Button
         android:id="@+id/Team"
