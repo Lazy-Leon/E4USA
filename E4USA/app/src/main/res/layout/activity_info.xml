@@ -83,16 +83,18 @@
         android:id="@+id/mLlayoutBottomButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:gravity="center|bottom">
 
         <Button
             android:id="@+id/backbutton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#00BCD4"
+            android:background="#d4d1d4"
+            android:drawableLeft="@drawable/ic_dashboard_black_24dp"
+            android:textColor="#ff0000"
             android:text="Back" />
-
 
     </LinearLayout>
 

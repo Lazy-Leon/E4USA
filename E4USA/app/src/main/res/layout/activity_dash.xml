@@ -1,41 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
 
     <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_above="@+id/mLlayoutBottomButtons"
-
-        >
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#FC3"
+        android:gravity="center">
 
         <TextView
-            android:id="@+id/high_score_label"
-            android:layout_width="280dp"
-            android:layout_height="91dp"
-            android:gravity="center_vertical|right"
+            android:id="@+id/Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
 
-            android:text="Dashboard"
+            android:text="Project"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="#000000"
+            android:textColor="@android:color/white"
             android:textSize="36sp" />
     </RelativeLayout>
-
-    <LinearLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/mLlayoutBottomButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:gravity="center|bottom">
 
         <Button
             android:id="@+id/buttonswitchUser"
@@ -43,8 +37,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#00BCD4"
-            android:text="Switch Team" />
+            android:background="#d4d1d4"
+            android:drawableLeft="@drawable/ic_dashboard_black_24dp"
+            android:text="Dashboard"
+            android:textColor="#ff0000"/>
 
         <Button
             android:id="@+id/About"
@@ -52,14 +48,21 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/buttonInfo"
             android:layout_weight="1"
-            android:background="#00BCD4"
-            android:text="About" />
+            android:background="#d4d1d4"
+            android:drawableLeft="@drawable/ic_about_black_24dp"
+            android:text="About"
+            android:textColor="#ff0000"/>
+
     </LinearLayout>
+
 
     <ListView
         android:id="@+id/listViewProjects"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:layout_above="@+id/mLlayoutBottomButtons"
+        />
 
 
 </RelativeLayout>

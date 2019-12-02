@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#FC3"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+
+            android:text="Project"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@android:color/white"
+            android:textSize="36sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/mLlayoutBottomButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center|bottom">
+
+        <Button
+            android:id="@+id/buttonswitchUser"
+            android:layout_below="@id/buttonswitchUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#d4d1d4"
+            android:drawableLeft="@drawable/ic_dashboard_black_24dp"
+            android:text="Dashboard"
+            android:textColor="#ff0000"/>
+
+        <Button
+            android:id="@+id/About"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonInfo"
+            android:layout_weight="1"
+            android:background="#d4d1d4"
+            android:drawableLeft="@drawable/ic_about_black_24dp"
+            android:text="About"
+            android:textColor="#ff0000"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/Announcements"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="-92dp"
+        android:background="@android:color/transparent"
+        android:gravity="left|center_vertical"
+        android:text="     Announcements"
+        android:drawableLeft="@drawable/ic_announcement_black_24dp"
+        android:textColor="#ff0000" />
+
+    <Button
+        android:id="@+id/Assignments"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_above="@+id/Announcements"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="-92dp"
+        android:background="@android:color/transparent"
+        android:gravity="left|center_vertical"
+        android:text="     Assignments"
+        android:drawableLeft="@drawable/ic_assignment_black_24dp"
+        android:textColor="#ff0000"/>
+
+    <Button
+        android:id="@+id/Grades"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_above="@+id/Assignments"
+        android:layout_marginBottom="-92dp"
+        android:background="@android:color/transparent"
+        android:gravity="left|center_vertical"
+        android:text="     Grades"
+        android:drawableLeft="@drawable/ic_grade_black_24dp"
+        android:textColor="#ff0000"/>
+
+    <Button
+        android:id="@+id/Team"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_above="@+id/Grades"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="-92dp"
+        android:background="@android:color/transparent"
+        android:gravity="left|center_vertical"
+        android:text="     Team"
+        android:drawableLeft="@drawable/ic_group_black_24dp"
+        android:textColor="#ff0000"/>
+
+    <Button
+        android:id="@+id/Resources"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_above="@+id/Team"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="-92dp"
+        android:background="@android:color/transparent"
+        android:gravity="left|center_vertical"
+        android:text="     Resources"
+        android:drawableLeft="@drawable/ic_folder_black_24dp"
+        android:textColor="#ff0000"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="281dp"
+        android:layout_below="@+id/header"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="-1dp"
+        android:gravity="center"
+        android:src="@drawable/icon1" />
+
+</RelativeLayout>

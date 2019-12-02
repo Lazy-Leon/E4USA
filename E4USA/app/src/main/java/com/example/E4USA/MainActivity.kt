@@ -15,10 +15,6 @@ import java.util.*
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.ValueEventListener
-
-
-
-
 class MainActivity : AppCompatActivity() {
 
     companion object {
@@ -45,21 +41,28 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        students =  mutableListOf()
+        allStudents = ArrayList()
 
         mAuth = FirebaseAuth.getInstance()
 
         initializeUI()
 
-        loginBtn.setOnClickListener { loginUserAccount() }
+        loginBtn.setOnClickListener {
+            loginUserAccount()
+        }
 
         registarBtn.setOnClickListener {
             startActivity(Intent(this@MainActivity, RegistrationActivity::class.java ))
-
         }
+
+
+
 
     }
     override fun onStart() {
         super.onStart()
+
         //attaching value event listener
         dbref = FirebaseDatabase.getInstance().getReference("Users/UserID")
         dbref.addValueEventListener(object : ValueEventListener {
@@ -72,10 +75,10 @@ class MainActivity : AppCompatActivity() {
                 //iterating through all the nodes
                 for (postSnapshot in dataSnapshot.children) {
                     //getting artist
-                    val student_id = postSnapshot.getValue<Int>(Int::class.java)
+                    val student_id = postSnapshot.getValue(Student::class.java)
 
                     //adding author to the list
-                    students.add(student_id!!)
+                    allStudents.add(student_id!!)
                 }
 
                 //creating adapter
@@ -139,13 +142,15 @@ class MainActivity : AppCompatActivity() {
                 progressBar.visibility = View.GONE
                 if (task.isSuccessful) {
 //                    Toast.makeText(applicationContext, "Login successful!", Toast.LENGTH_LONG)
-//                        .show()
+//                        .show(0
 
+                    // I am making an intent for the dashboard to take on
                     val dashboard = Intent(
                         this@MainActivity,
                         DashboardActivity::class.java
                     )
 
+                    //getting the the logged-in user's object, aka the right student
                     for (usr in allStudents){
                         if (usr.email == email)
                         {
@@ -153,14 +158,11 @@ class MainActivity : AppCompatActivity() {
 
                         }
                     }
-//
-
-                    dashboard.putExtra("TargetStudent", targetStudent!!.ID)
 
 
-
+                    dashboard.putExtra("TargetStudent", targetStudent)
                     // Use the Intent to start the HelloAndroid Activity
-                    startActivity(dashboard)
+                    this.startActivity(dashboard)
 
 
                 } else {
@@ -171,6 +173,7 @@ class MainActivity : AppCompatActivity() {
                     ).show()
                 }
             }
+
     }
 
     private fun initializeUI() {
@@ -179,7 +182,8 @@ class MainActivity : AppCompatActivity() {
 
         loginBtn = findViewById(R.id.login)
         registarBtn = findViewById(R.id.register)
-        progressBar = findViewById(R.id.progressBar)
     }
 
 }
+
+
