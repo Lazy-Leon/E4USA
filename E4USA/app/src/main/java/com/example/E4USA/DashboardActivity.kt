@@ -42,7 +42,7 @@ class DashboardActivity : AppCompatActivity() {
 
 
         buttonSwitchTeams = findViewById<View>(R.id.buttonswitchUser) as Button
-        buttonInfo= findViewById<View>(R.id.buttonswitchUser) as Button
+        buttonInfo= findViewById<View>(R.id.About) as Button
         profilebutton = findViewById<View>(R.id.profileb) as Button
         buttonLogout = findViewById<View>(R.id.Logout) as Button
 

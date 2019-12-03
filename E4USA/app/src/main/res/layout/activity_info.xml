@@ -74,7 +74,7 @@
                     android:layout_width="409dp"
                     android:layout_height="114dp"
                     android:layout_weight="1"
-                    android:background="#8FEBF3"
+                    android:background="#DF008C"
                     android:text="Component I" />
 
                 <Button
@@ -82,7 +82,7 @@
                     android:layout_width="409dp"
                     android:layout_height="114dp"
                     android:layout_weight="1"
-                    android:background="#E91E63"
+                    android:background="#52BEFD"
                     android:text="Component II" />
 
                 <Button
@@ -90,7 +90,7 @@
                     android:layout_width="409dp"
                     android:layout_height="114dp"
                     android:layout_weight="1"
-                    android:background="#DD2196F3"
+                    android:background="#67EA46"
                     android:text="Component III" />
 
                 <Button
@@ -98,7 +98,7 @@
                     android:layout_width="409dp"
                     android:layout_height="114dp"
                     android:layout_weight="1"
-                    android:background="#2CCC32"
+                    android:background="#BCFFFC"
                     android:text="Component IV" />
 
 
