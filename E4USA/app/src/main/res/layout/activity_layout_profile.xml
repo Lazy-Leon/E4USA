@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9ED8F3"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:backgroundTint="#9C27B0"
+        android:gravity="center|center_horizontal"
+        android:text="My Profile Page"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="#E91E63" />
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="185dp"
+        android:layout_above="@+id/mLlayoutBottomButtons"
+        android:layout_alignTop="@+id/mLlayoutBottomButtons"
+        android:layout_marginTop="-524dp"
+        android:layout_marginBottom="340dp"
+        tools:srcCompat="@tools:sample/avatars[14]" />
+
+    <LinearLayout
+        android:id="@+id/mLlayoutBottomButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+
+        <Button
+            android:id="@+id/backbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonswitchUser"
+            android:layout_weight="1"
+            android:background="#4CAF50"
+            android:drawableLeft="@drawable/ic_arrow_back_red_24dp"
+            android:text="Back"
+            android:textColor="#E18AD5F7" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonswitchUser"
+            android:layout_weight="1"
+            android:background="#d4d1d4"
+            android:drawableLeft="@drawable/ic_arrow_back_red_24dp"
+            android:text="Back"
+            android:textColor="#ff0000" />
+
+
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="311dp"
+        android:layout_height="260dp"
+        android:layout_above="@+id/mLlayoutBottomButtons"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="-30dp"
+        android:layout_marginBottom="45dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="61dp"
+                android:layout_height="match_parent"
+                android:text="Student" />
+
+            <Space
+                android:layout_width="26dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/student"
+                android:layout_width="131dp"
+                android:layout_height="43dp"
+                android:text="TextView" />
+
+            <Space
+                android:layout_width="28dp"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username" />
+
+            <Space
+                android:layout_width="18dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="131dp"
+                android:layout_height="43dp"
+                android:text="TextView" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="131dp"
+                android:layout_height="43dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="71dp"
+                android:layout_height="match_parent"
+                android:text="Teams" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/teams"
+                android:layout_width="131dp"
+                android:layout_height="43dp" />
+        </TableRow>
+    </TableLayout>
+
+
+</RelativeLayout>

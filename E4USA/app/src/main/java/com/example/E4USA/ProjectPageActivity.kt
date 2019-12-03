@@ -14,7 +14,6 @@ class ProjectPageActivityActivity : AppCompatActivity() {
     internal lateinit var buttonInfo: Button
     internal lateinit var buttonSwitchTeams: Button
 
-    private lateinit var listViewProjects: ListView
     private lateinit var textCourse: TextView
     private lateinit var textName: TextView
     private lateinit var textCreate: TextView
@@ -26,6 +25,7 @@ class ProjectPageActivityActivity : AppCompatActivity() {
 
     private lateinit var studentproject: Project
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_project)
@@ -35,7 +35,7 @@ class ProjectPageActivityActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
 
         buttonSwitchTeams = findViewById<View>(R.id.buttonswitchUser) as Button
-        buttonInfo= findViewById<View>(R.id.buttonswitchUser) as Button
+        buttonInfo = findViewById<View>(R.id.buttonswitchUser) as Button
         textCourse = findViewById<TextView>(R.id.CourseText) as TextView
         textName = findViewById<TextView>(R.id.NameText) as TextView
         textCreate = findViewById<TextView>(R.id.CreatedText) as TextView
@@ -52,14 +52,6 @@ class ProjectPageActivityActivity : AppCompatActivity() {
         buttonSwitchTeams.setOnClickListener {
             startActivity(Intent(applicationContext, DashboardActivity::class.java))
         }
-
-        textCourse.setText(studentproject.Course)
-        textName.setText(studentproject.Name)
-        textCreate.setText(studentproject.Created)
-        textDue.setText(studentproject.Due)
-        textGrade.setText(studentproject.Grade)
-        textSubmit.setText(studentproject.Submitted)
-
     }
 }
 

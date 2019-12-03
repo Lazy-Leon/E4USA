@@ -13,8 +13,10 @@ import com.google.firebase.database.*
 
 class DashboardActivity : AppCompatActivity() {
 
-    internal lateinit var buttonInfo: Button
-    internal lateinit var buttonSwitchTeams: Button
+    private lateinit var buttonInfo: Button
+    private lateinit var buttonSwitchTeams: Button
+    private lateinit var profilebutton:Button
+    private lateinit var buttonLogout: Button
 
     private lateinit var listViewProjects: ListView
     private lateinit var databaseTitles: DatabaseReference
@@ -41,18 +43,24 @@ class DashboardActivity : AppCompatActivity() {
 
         buttonSwitchTeams = findViewById<View>(R.id.buttonswitchUser) as Button
         buttonInfo= findViewById<View>(R.id.buttonswitchUser) as Button
-
-        //authors = ArrayList()
+        profilebutton = findViewById<View>(R.id.profileb) as Button
+        buttonLogout = findViewById<View>(R.id.Logout) as Button
 
         buttonInfo.setOnClickListener {
-            val intent = Intent(applicationContext, InfoActivity::class.java)
+            startActivity(Intent(this@DashboardActivity, InfoActivity::class.java))
+        }
 
-            startActivity(intent)
+        buttonLogout.setOnClickListener{
+            startActivity(Intent(this@DashboardActivity, MainActivity::class.java))
         }
 
         listViewProjects = findViewById(R.id.listViewProjects)
 
-
+        profilebutton.setOnClickListener {
+            val intent = Intent(applicationContext, ProfileActivity::class.java)
+            intent.putExtra("user",target)
+            startActivity(intent)
+        }
 
         mAuth = FirebaseAuth.getInstance()
         prj =""
@@ -123,8 +131,6 @@ class DashboardActivity : AppCompatActivity() {
 
                 }
 
-                Log.i("Debug Message","found the project "+projs)
-
                 val titleListAdapter = ProjectList(this@DashboardActivity, finalPrj)
                 listViewProjects.adapter = titleListAdapter
             }
@@ -136,6 +142,4 @@ class DashboardActivity : AppCompatActivity() {
 
 
 }
-
-
 

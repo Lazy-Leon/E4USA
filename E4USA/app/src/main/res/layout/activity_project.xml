@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_Container"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,8 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="300dp"
-        android:layout_marginBottom="88dp"
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="82dp"
         android:text="Submit Status" />
 
     <TextView
@@ -20,8 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="203dp"
-        android:layout_marginBottom="294dp"
+        android:layout_marginEnd="210dp"
+        android:layout_marginBottom="156dp"
         android:text="TextView" />
 
     <TextView
@@ -30,8 +31,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="205dp"
-        android:layout_marginBottom="87dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="82dp"
         android:text="TextView" />
 
     <TextView
@@ -40,8 +41,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="205dp"
-        android:layout_marginBottom="258dp"
+        android:layout_marginEnd="211dp"
+        android:layout_marginBottom="118dp"
         android:text="TextView" />
 
     <TextView
@@ -50,8 +51,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="205dp"
-        android:layout_marginBottom="209dp"
+        android:layout_marginEnd="210dp"
+        android:layout_marginBottom="82dp"
         android:text="TextView" />
 
     <TextView
@@ -60,8 +61,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="207dp"
-        android:layout_marginBottom="170dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="155dp"
         android:text="TextView" />
 
     <TextView
@@ -70,8 +71,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="207dp"
-        android:layout_marginBottom="132dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="119dp"
         android:text="TextView" />
 
     <TextView
@@ -80,8 +81,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="302dp"
-        android:layout_marginBottom="130dp"
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="118dp"
         android:text="Grade" />
 
     <TextView
@@ -90,8 +91,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="302dp"
-        android:layout_marginBottom="168dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="156dp"
         android:text="Due Date" />
 
     <TextView
@@ -100,8 +101,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="304dp"
-        android:layout_marginBottom="209dp"
+        android:layout_marginEnd="312dp"
+        android:layout_marginBottom="82dp"
         android:text="Created" />
 
     <TextView
@@ -110,8 +111,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="306dp"
-        android:layout_marginBottom="257dp"
+        android:layout_marginEnd="314dp"
+        android:layout_marginBottom="118dp"
         android:text="Name" />
 
     <RelativeLayout
@@ -169,25 +170,25 @@
         android:layout_width="match_parent"
         android:layout_height="275dp"
         android:layout_above="@+id/mLlayoutBottomButtons"
-        android:layout_marginBottom="291dp">
+        android:layout_marginBottom="226dp">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/Display"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
             android:layout_above="@+id/header"
-            android:layout_below="@+id/CourseText"/>
+            android:layout_below="@+id/CourseText"
+            android:text="TextView" />
     </ScrollView>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_change"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/mLlayoutBottomButtons"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="163dp"
-        android:layout_marginBottom="578dp"
+        android:layout_marginEnd="166dp"
+        android:layout_marginBottom="166dp"
         android:text="Button" />
 
     <TextView
@@ -196,8 +197,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="306dp"
-        android:layout_marginBottom="296dp"
+        android:layout_marginEnd="315dp"
+        android:layout_marginBottom="155dp"
         android:text="Course" />
 
 </RelativeLayout>

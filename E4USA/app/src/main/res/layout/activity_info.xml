@@ -127,6 +127,18 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/Logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="top|right"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/transparent"
+            android:text="Logout"
+            android:textColor="#4CAF50"
+            android:textStyle="bold" />
+
 
     </RelativeLayout>
 

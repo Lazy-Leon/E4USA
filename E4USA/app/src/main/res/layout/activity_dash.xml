@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:background="#FC3"
+        android:background="#E91E63"
         android:gravity="center">
 
         <TextView
@@ -20,8 +20,9 @@
 
             android:text="Project"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="@android:color/white"
-            android:textSize="36sp" />
+            android:textColor="#8CC8EA"
+            android:textSize="36sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/Logout"
@@ -30,9 +31,10 @@
             android:layout_alignParentEnd="true"
             android:layout_gravity="top|right"
             android:layout_marginEnd="8dp"
+            android:background="@android:color/transparent"
             android:text="Logout"
-            android:textColor="#ff0000"
-            android:background="@android:color/transparent"/>
+            android:textColor="#4CAF50"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
@@ -45,14 +47,16 @@
 
         <Button
             android:id="@+id/buttonswitchUser"
-            android:layout_below="@id/buttonswitchUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/buttonswitchUser"
             android:layout_weight="1"
-            android:background="#d4d1d4"
+            android:background="#E91E63"
             android:drawableLeft="@drawable/ic_dashboard_black_24dp"
             android:text="Dashboard"
-            android:textColor="#ff0000"/>
+            android:textColor="#8CC8EA"
+            android:textSize="14sp"
+            tools:textStyle="bold" />
 
         <Button
             android:id="@+id/About"
@@ -60,21 +64,23 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/buttonInfo"
             android:layout_weight="1"
-            android:background="#d4d1d4"
+            android:background="#E91E63"
             android:drawableLeft="@drawable/ic_about_black_24dp"
             android:text="About"
-            android:textColor="#ff0000"/>
+            android:textColor="#8CC8EA"
+            android:textStyle="bold" />
 
         <Button
-            android:id="@+id/logout"
+            android:id="@+id/profileb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/logout"
+            android:layout_below="@id/profileb"
             android:layout_weight="1"
-            android:background="#d4d1d4"
+            android:background="#E91E63"
             android:drawableLeft="@drawable/ic_about_black_24dp"
-            android:text="Logout"
-            android:textColor="#ff0000"/>
+            android:text="My Profile"
+            android:textColor="#8CC8EA"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

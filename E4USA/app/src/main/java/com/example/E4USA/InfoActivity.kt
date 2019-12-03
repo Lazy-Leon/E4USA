@@ -13,12 +13,13 @@ import androidx.appcompat.app.AppCompatActivity
 class InfoActivity : AppCompatActivity() {
 
 
-    internal lateinit var buttonBack: Button
+    private lateinit var buttonBack: Button
 
-    internal lateinit var buttoncomp1: Button
-    internal lateinit var buttoncomp2: Button
-    internal lateinit var buttoncomp3: Button
-    internal lateinit var buttoncomp4: Button
+    private lateinit var buttoncomp1: Button
+    private lateinit var buttoncomp2: Button
+    private lateinit var buttoncomp3: Button
+    private lateinit var buttoncomp4: Button
+    private lateinit var buttonLogout: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +30,6 @@ class InfoActivity : AppCompatActivity() {
         buttoncomp2 = findViewById<View>(R.id.buttonb) as Button
         buttoncomp3 = findViewById<View>(R.id.buttonc) as Button
         buttoncomp4 = findViewById<View>(R.id.buttond) as Button
-
-
 
 
         buttonBack.setOnClickListener {
