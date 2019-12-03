@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    >
 
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:background="#FC3"
+        android:background="#C72C75"
         android:gravity="center">
 
         <TextView
@@ -123,11 +126,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="281dp"
+        android:layout_width="383dp"
+        android:layout_height="222dp"
         android:layout_below="@+id/header"
         android:layout_centerVertical="true"
-        android:layout_marginTop="-1dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:src="@drawable/icon1" />
 

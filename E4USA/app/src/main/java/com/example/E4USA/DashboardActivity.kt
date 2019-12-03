@@ -39,16 +39,15 @@ class DashboardActivity : AppCompatActivity() {
         target = intent1.getParcelableExtra("TargetStudent")
 
 
-
         buttonSwitchTeams = findViewById<View>(R.id.buttonswitchUser) as Button
-        buttonInfo= findViewById<View>(R.id.About) as Button
+        buttonInfo= findViewById<View>(R.id.buttonswitchUser) as Button
 
-        buttonSwitchTeams.setOnClickListener{
-            startActivity(Intent(this@DashboardActivity, DashboardActivity::class.java))
-        }
+        //authors = ArrayList()
 
         buttonInfo.setOnClickListener {
-            startActivity(Intent(this@DashboardActivity, InfoActivity::class.java))
+            val intent = Intent(applicationContext, InfoActivity::class.java)
+
+            startActivity(intent)
         }
 
         listViewProjects = findViewById(R.id.listViewProjects)
@@ -58,13 +57,27 @@ class DashboardActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         prj =""
 
+        listViewProjects.onItemClickListener = AdapterView.OnItemClickListener { _, _, item, _ ->
+            //getting the selected artist
+            val targetProject = finalPrj[item]
+
+            //creating an intent
+            val intent = Intent(applicationContext, ProjectPageActivityActivity::class.java)
+
+            //putting artist name and id to intent
+            intent.putExtra("projinfo", targetProject)
+
+            //starting the activity with intent
+            startActivity(intent)
+        }
+
     }
 
 
     override fun onStart() {
         super.onStart()
 
-        var projs:MutableList<Project> = ArrayList()
+        var projs:MutableList<Project>
 
         database1.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -79,51 +92,34 @@ class DashboardActivity : AppCompatActivity() {
                 Log.d("Inside Adapter" , prj.split(',').toString())
 
                 //TODO first, get all the projects from the database and put them in a list
-                database1.addValueEventListener(object : ValueEventListener {
-                    override fun onDataChange(dataSnapshot: DataSnapshot) {
+                projs = java.util.ArrayList()
 
-                        //clearing the previous artist list
+                //iterating through all the nodes
+                for (postSnapshot in dataSnapshot.children) {
+                    //getting artist
+                    //print(postSnapshot.getValue())
+                    val student_id = postSnapshot.getValue<Project>(Project::class.java)
+                    Log.d("Inside Loop Message","found the user "+student_id!!)
 
-                        projs = java.util.ArrayList()
+                    //adding author to the list
+                    projs.add(student_id)
+                }
 
-                        //iterating through all the nodes
-                        for (postSnapshot in dataSnapshot.children) {
-                            //getting artist
-                            //print(postSnapshot.getValue())
-                            val student_id = postSnapshot.getValue<Project>(Project::class.java)
-
-
-                            //adding author to the list
-                            projs.add(student_id!!)
-                            Log.i("Add", "Is adding students to project")
-                        }
-
-                        //creating adapter
-                        //val authorAdapter = AuthorList(this@MainActivity, authors)
-                        //attaching adapter to the listview
-                        //listViewAuthors.adapter = authorAdapter
-                    }
-
-                    override fun onCancelled(databaseError: DatabaseError) {
-
-                    }
-                })
-                //extract the user's projects from the project list and put those in another list called final_prj
 
                 //prj = target!!.projects
 
+                //extract the user's projects from the project list and put those in another list called final_prj
                 for (each in projs){
-                    if (final.contains(each.ProjId))
+                    if (final.contains(each.ProjID))
                     {
                         finalPrj.add(each)
                     }
 
                 }
 
-                Log.d("Debug Message","found the project "+prj)
+                Log.i("Debug Message","found the project "+projs)
 
                 val titleListAdapter = ProjectList(this@DashboardActivity, finalPrj)
-                Log.d("Debug Message","I tried adding stuff")
                 listViewProjects.adapter = titleListAdapter
             }
 

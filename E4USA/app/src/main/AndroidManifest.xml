@@ -28,6 +28,7 @@
         <activity android:name=".InfoActivity2" />
         <activity android:name=".InfoActivity3" />
         <activity android:name=".InfoActivity4" />
+        <activity android:name=".ProjectPageActivityActivity" />
     </application>
 
 </manifest>

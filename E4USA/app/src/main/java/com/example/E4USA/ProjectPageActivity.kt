@@ -18,9 +18,13 @@ class ProjectPageActivityActivity : AppCompatActivity() {
 
     private var mAuth: FirebaseAuth? = null
 
+    private lateinit var studentproject: Project
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_project)
+
+        studentproject = intent.getParcelableExtra<Project>("projinfo")
 
         mAuth = FirebaseAuth.getInstance()
 

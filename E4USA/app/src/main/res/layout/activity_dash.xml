@@ -22,6 +22,18 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@android:color/white"
             android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/Logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="top|right"
+            android:layout_marginEnd="8dp"
+            android:text="Logout"
+            android:textColor="#ff0000"
+            android:background="@android:color/transparent"/>
+
     </RelativeLayout>
 
     <LinearLayout
@@ -51,6 +63,17 @@
             android:background="#d4d1d4"
             android:drawableLeft="@drawable/ic_about_black_24dp"
             android:text="About"
+            android:textColor="#ff0000"/>
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logout"
+            android:layout_weight="1"
+            android:background="#d4d1d4"
+            android:drawableLeft="@drawable/ic_about_black_24dp"
+            android:text="Logout"
             android:textColor="#ff0000"/>
 
     </LinearLayout>
