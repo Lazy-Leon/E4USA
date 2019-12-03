@@ -151,7 +151,6 @@ class MainActivity : AppCompatActivity() {
 
         mAuth!!.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
-                progressBar.visibility = View.GONE
                 if (task.isSuccessful) {
                     Toast.makeText(applicationContext, "Login successful!", Toast.LENGTH_LONG)
                         .show()
@@ -200,7 +199,6 @@ class MainActivity : AppCompatActivity() {
 
         loginBtn = findViewById(R.id.login)
         registarBtn = findViewById(R.id.register)
-        progressBar = findViewById(R.id.progressBar)
     }
 
 }

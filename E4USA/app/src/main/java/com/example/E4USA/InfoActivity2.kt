@@ -13,8 +13,8 @@ import androidx.appcompat.app.AppCompatActivity
 class InfoActivity2 : AppCompatActivity() {
 
 
-    //internal lateinit var buttonBack: Button
-    internal lateinit var buttonBack: Button
+    private lateinit var buttonLogout: Button
+    private lateinit var buttonBack: Button
     private lateinit var compo1a: ImageView
     private lateinit var compo1b: ImageView
     private lateinit var compo1c: ImageView
@@ -33,12 +33,22 @@ class InfoActivity2 : AppCompatActivity() {
         compo1c = findViewById<View>(R.id.compo1c) as ImageView
 
         buttonBack = findViewById<View>(R.id.backbutton) as Button
+        buttonLogout = findViewById<View>(R.id.Logout) as Button
         target = intent.getParcelableExtra("TargetStudent")
 
         buttonBack.setOnClickListener {
             val intent = Intent(this, InfoActivity::class.java)
             intent.putExtra("TargetStudent", target)
             startActivity(intent)
+        }
+
+        buttonLogout.setOnClickListener {
+            Toast.makeText(
+                this,
+                "Logout Successfully",
+                Toast.LENGTH_LONG
+            ).show()
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         compo1a.setOnClickListener{

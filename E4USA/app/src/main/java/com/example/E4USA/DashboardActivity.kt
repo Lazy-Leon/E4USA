@@ -53,6 +53,11 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         buttonLogout.setOnClickListener{
+            Toast.makeText(
+                this,
+                "Logout Successfully",
+                Toast.LENGTH_LONG
+            ).show()
             startActivity(Intent(this@DashboardActivity, MainActivity::class.java))
         }
 

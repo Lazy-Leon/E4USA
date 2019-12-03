@@ -12,16 +12,14 @@ import androidx.appcompat.app.AppCompatActivity
 
 class InfoActivity4 : AppCompatActivity() {
 
-    internal lateinit var buttonBack: Button
+    private lateinit var buttonBack: Button
     private lateinit var compo1a: ImageView
     private lateinit var compo1b: ImageView
     private lateinit var compo1c: ImageView
 
-    internal lateinit var buttonlogout: Button
+    private lateinit var buttonLogout: Button
 
     private var target: Student ?= null
-
-    //internal lateinit var buttonBack: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +32,16 @@ class InfoActivity4 : AppCompatActivity() {
 
         target = intent.getParcelableExtra("TargetStudent")
 
-        buttonlogout = findViewById<View>(R.id.Logout) as Button
+        buttonLogout = findViewById<View>(R.id.Logout) as Button
+
+        buttonLogout.setOnClickListener {
+            Toast.makeText(
+                this,
+                "Logout Successfully",
+                Toast.LENGTH_LONG
+            ).show()
+            startActivity(Intent(this, MainActivity::class.java))
+        }
 
         buttonBack = findViewById<View>(R.id.backbutton) as Button
 
@@ -81,13 +88,5 @@ class InfoActivity4 : AppCompatActivity() {
             val alert = dialogBuilder.create()
             alert.show()
         }
-
-        buttonlogout.setOnClickListener{
-
-            startActivity(Intent(applicationContext, MainActivity::class.java))
-        }
-
-
     }
-
 }

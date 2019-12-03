@@ -20,7 +20,7 @@ class InfoActivity3 : AppCompatActivity() {
     private var target: Student ?= null
 
 
-    internal lateinit var buttonlogout: Button
+    private lateinit var buttonlogout: Button
 
 
     //internal lateinit var buttonBack: Button
@@ -45,6 +45,15 @@ class InfoActivity3 : AppCompatActivity() {
             val intent = Intent(this, InfoActivity::class.java)
             intent.putExtra("TargetStudent", target)
             startActivity(intent)
+        }
+
+        buttonlogout.setOnClickListener {
+            Toast.makeText(
+                this,
+                "Logout Successfully",
+                Toast.LENGTH_LONG
+            ).show()
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         compo1a.setOnClickListener{

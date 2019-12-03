@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_aboutcomp1.*
 
 class InfoActivity : AppCompatActivity() {
 
@@ -65,6 +66,15 @@ class InfoActivity : AppCompatActivity() {
             val intent = Intent(this, InfoActivity4::class.java)
             intent.putExtra("TargetStudent", target)
             startActivity(intent)
+        }
+
+        buttonLogout.setOnClickListener {
+            Toast.makeText(
+                this,
+                "Logout Successfully",
+                Toast.LENGTH_LONG
+            ).show()
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 }

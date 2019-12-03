@@ -10,7 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 class ProfileActivity : AppCompatActivity() {
 
 
-    internal lateinit var buttonBack: Button
+    private lateinit var buttonBack: Button
+    private lateinit var buttonLogout: Button
 
     private lateinit var email: TextView
     private lateinit var student: TextView
@@ -26,6 +27,7 @@ class ProfileActivity : AppCompatActivity() {
         username = findViewById<TextView>(R.id.username)
         teams = findViewById<TextView>(R.id.teams)
 
+
         val temp:Student? = intent.getParcelableExtra("user")
         if (temp != null) {
             userInfo = temp
@@ -36,12 +38,22 @@ class ProfileActivity : AppCompatActivity() {
         }
         buttonBack = findViewById(R.id.backbutton)
 
-
         buttonBack.setOnClickListener {
             val intent = Intent(applicationContext, DashboardActivity::class.java)
             intent.putExtra("TargetStudent",userInfo)
             startActivity(intent)
 
+        }
+
+        buttonLogout = findViewById(R.id.Logout)
+
+        buttonLogout.setOnClickListener {
+            Toast.makeText(
+                this,
+                "Logout Successfully",
+                Toast.LENGTH_LONG
+            ).show()
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
     }

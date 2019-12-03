@@ -38,6 +38,7 @@ class ProjectPageActivityActivity : AppCompatActivity() {
     private lateinit var textDue: TextView
     private lateinit var textGrade: TextView
     private lateinit var textSubmit: TextView
+    private lateinit var name : TextView
 
     private var mAuth: FirebaseAuth? = null
 
@@ -55,6 +56,7 @@ class ProjectPageActivityActivity : AppCompatActivity() {
         }
         mAuth = FirebaseAuth.getInstance()
 
+        name = findViewById<View>(R.id.Name) as TextView
         buttonSwitchTeams = findViewById<View>(R.id.buttonswitchUser) as Button
         buttonInfo = findViewById<View>(R.id.buttonswitchUser) as Button
         buttonLogout = findViewById<View>(R.id.Logout) as Button
@@ -78,6 +80,7 @@ class ProjectPageActivityActivity : AppCompatActivity() {
         buttonStepk = findViewById<View>(R.id.button11) as Button
         buttonStepl = findViewById<View>(R.id.button12) as Button
 
+        name.setText(project.Name)
 
         buttonInfo.setOnClickListener {
             startActivity(Intent(this, InfoActivity::class.java))

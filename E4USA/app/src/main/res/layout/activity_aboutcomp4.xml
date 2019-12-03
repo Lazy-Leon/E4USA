@@ -7,21 +7,7 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-
-        >
-
-
-        <Button
-            android:id="@+id/Logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="top|right"
-            android:layout_marginEnd="8dp"
-            android:background="#BCFFFC "
-            android:text="Logout"
-            android:textColor="#ff0000" />
+        android:layout_height="fill_parent">
 
         <TextView
             android:id="@+id/component1"
@@ -105,15 +91,25 @@
 
             <Button
                 android:id="@+id/backbutton"
-                android:layout_below="@id/buttonswitchUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#d4d1d4"
+                android:background="#4CAF50"
                 android:drawableLeft="@drawable/ic_arrow_back_red_24dp"
-                android:text="Back"
-                android:textColor="#ff0000"/>
+                android:textColor="#E18AD5F7"
+                android:text="Back" />
 
+            <Button
+                android:id="@+id/Logout"
+                android:layout_width="211dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="top|right"
+                android:layout_marginEnd="-2dp"
+                android:background="#BCFFFC"
+                android:text="Logout"
+                android:textColor="#4CAF50"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
