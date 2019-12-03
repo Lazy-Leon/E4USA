@@ -15,6 +15,12 @@ class ProjectPageActivityActivity : AppCompatActivity() {
     internal lateinit var buttonSwitchTeams: Button
 
     private lateinit var listViewProjects: ListView
+    private lateinit var textCourse: TextView
+    private lateinit var textName: TextView
+    private lateinit var textCreate: TextView
+    private lateinit var textDue: TextView
+    private lateinit var textGrade: TextView
+    private lateinit var textSubmit: TextView
 
     private var mAuth: FirebaseAuth? = null
 
@@ -30,16 +36,29 @@ class ProjectPageActivityActivity : AppCompatActivity() {
 
         buttonSwitchTeams = findViewById<View>(R.id.buttonswitchUser) as Button
         buttonInfo= findViewById<View>(R.id.buttonswitchUser) as Button
+        textCourse = findViewById<TextView>(R.id.CourseText) as TextView
+        textName = findViewById<TextView>(R.id.NameText) as TextView
+        textCreate = findViewById<TextView>(R.id.CreatedText) as TextView
+        textDue = findViewById<TextView>(R.id.DueText) as TextView
+        textGrade = findViewById<TextView>(R.id.GradeText) as TextView
+        textSubmit = findViewById<TextView>(R.id.SubmitText) as TextView
+
+
 
         buttonInfo.setOnClickListener {
             startActivity(Intent(applicationContext, InfoActivity::class.java))
         }
 
         buttonSwitchTeams.setOnClickListener {
-            startActivity(Intent(applicationContext, InfoActivity::class.java))
+            startActivity(Intent(applicationContext, DashboardActivity::class.java))
         }
 
-
+        textCourse.setText(studentproject.Course)
+        textName.setText(studentproject.Name)
+        textCreate.setText(studentproject.Created)
+        textDue.setText(studentproject.Due)
+        textGrade.setText(studentproject.Grade)
+        textSubmit.setText(studentproject.Submitted)
 
     }
 }

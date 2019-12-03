@@ -79,8 +79,13 @@ class DashboardActivity : AppCompatActivity() {
 
         var projs:MutableList<Project>
 
+
+
         database1.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+                finalPrj.clear()
+
                 prj= ""
                 prj = target!!.ProjectList
                 var prjArray = prj.split(',')
@@ -93,6 +98,7 @@ class DashboardActivity : AppCompatActivity() {
 
                 //TODO first, get all the projects from the database and put them in a list
                 projs = java.util.ArrayList()
+
 
                 //iterating through all the nodes
                 for (postSnapshot in dataSnapshot.children) {
