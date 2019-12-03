@@ -47,7 +47,9 @@ class DashboardActivity : AppCompatActivity() {
         buttonLogout = findViewById<View>(R.id.Logout) as Button
 
         buttonInfo.setOnClickListener {
-            startActivity(Intent(this@DashboardActivity, InfoActivity::class.java))
+            val intent = Intent(applicationContext, InfoActivity::class.java)
+            intent.putExtra("TargetStudent",target)
+            startActivity(intent)
         }
 
         buttonLogout.setOnClickListener{
@@ -74,6 +76,7 @@ class DashboardActivity : AppCompatActivity() {
 
             //putting artist name and id to intent
             intent.putExtra("projinfo", targetProject)
+            intent.putExtra("something", target)
 
             //starting the activity with intent
             startActivity(intent)

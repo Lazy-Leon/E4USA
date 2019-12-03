@@ -20,12 +20,15 @@ class InfoActivity : AppCompatActivity() {
     private lateinit var buttoncomp3: Button
     private lateinit var buttoncomp4: Button
     private lateinit var buttonLogout: Button
+    private var target: Student ?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info)
+        target = intent.getParcelableExtra("TargetStudent")
 
-        buttonBack= findViewById<View>(R.id.backbutton) as Button
+        buttonBack = findViewById<View>(R.id.backbutton) as Button
+        buttonLogout = findViewById<View>(R.id.Logout) as Button
         buttoncomp1 = findViewById<View>(R.id.buttona) as Button
         buttoncomp2 = findViewById<View>(R.id.buttonb) as Button
         buttoncomp3 = findViewById<View>(R.id.buttonc) as Button
@@ -33,27 +36,35 @@ class InfoActivity : AppCompatActivity() {
 
 
         buttonBack.setOnClickListener {
-            val intent = Intent(applicationContext, DashboardActivity::class.java)
-
+            val intent = Intent(this, DashboardActivity::class.java)
+            intent.putExtra("TargetStudent", target)
             startActivity(intent)
         }
 
         buttoncomp1.setOnClickListener {
-            startActivity(Intent(this@InfoActivity, InfoActivity1::class.java))
+            val intent = Intent(this, InfoActivity1::class.java)
+            intent.putExtra("TargetStudent", target)
+            startActivity(intent)
         }
 
         buttoncomp2.setOnClickListener {
-            startActivity(Intent(this@InfoActivity, InfoActivity2::class.java))
+            val intent = Intent(this, InfoActivity2::class.java)
+            intent.putExtra("TargetStudent", target)
+            startActivity(intent)
         }
 
         buttoncomp3.setOnClickListener {
-            startActivity(Intent(this@InfoActivity, InfoActivity3::class.java))
+            val intent = Intent(this, InfoActivity3::class.java)
+            intent.putExtra("TargetStudent", target)
+            startActivity(intent)
+
+
         }
 
         buttoncomp4.setOnClickListener {
-            startActivity(Intent(this@InfoActivity, InfoActivity4::class.java))
+            val intent = Intent(this, InfoActivity4::class.java)
+            intent.putExtra("TargetStudent", target)
+            startActivity(intent)
         }
-
     }
-
 }

@@ -19,7 +19,7 @@ class InfoActivity2 : AppCompatActivity() {
     private lateinit var compo1b: ImageView
     private lateinit var compo1c: ImageView
 
-    internal lateinit var buttonlogout: Button
+    private var target: Student ?= null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,11 +33,12 @@ class InfoActivity2 : AppCompatActivity() {
         compo1c = findViewById<View>(R.id.compo1c) as ImageView
 
         buttonBack = findViewById<View>(R.id.backbutton) as Button
-
-        buttonlogout = findViewById<View>(R.id.Logout) as Button
+        target = intent.getParcelableExtra("TargetStudent")
 
         buttonBack.setOnClickListener {
-            startActivity(Intent(this, InfoActivity::class.java))
+            val intent = Intent(this, InfoActivity::class.java)
+            intent.putExtra("TargetStudent", target)
+            startActivity(intent)
         }
 
         compo1a.setOnClickListener{
@@ -89,14 +90,5 @@ class InfoActivity2 : AppCompatActivity() {
             val alert = dialogBuilder.create()
             alert.show()
         }
-
-        buttonlogout.setOnClickListener{
-
-            startActivity(Intent(applicationContext, MainActivity::class.java))
-        }
-
-
     }
-
-
 }

@@ -21,26 +21,29 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_layout_profile)
-        userInfo = intent.getParcelableExtra("user")
-
         email = findViewById<TextView>(R.id.email)
         student = findViewById<TextView>(R.id.student)
         username = findViewById<TextView>(R.id.username)
         teams = findViewById<TextView>(R.id.teams)
 
+        val temp:Student? = intent.getParcelableExtra("user")
+        if (temp != null) {
+            userInfo = temp
+            email.setText(userInfo.email)// = userInfo.email
+            student.setText(userInfo.Name)// = userInfo.Name
+            username.setText(userInfo.Username)// = userInfo.Username
+            teams.setText(userInfo.Team)// = userInfo.Team
+        }
         buttonBack = findViewById(R.id.backbutton)
 
 
         buttonBack.setOnClickListener {
-            val intent = Intent(this@ProfileActivity, DashboardActivity::class.java)
+            val intent = Intent(applicationContext, DashboardActivity::class.java)
+            intent.putExtra("TargetStudent",userInfo)
             startActivity(intent)
 
         }
 
-        email.setText(userInfo.email)// = userInfo.email
-        student.setText(userInfo.Name)// = userInfo.Name
-        username.setText(userInfo.Username)// = userInfo.Username
-        teams.setText(userInfo.Team)// = userInfo.Team
     }
 
 }

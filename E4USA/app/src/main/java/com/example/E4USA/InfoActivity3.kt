@@ -17,7 +17,7 @@ class InfoActivity3 : AppCompatActivity() {
     private lateinit var compo1b: ImageView
     private lateinit var compo1c: ImageView
 
-
+    private var target: Student ?= null
 
 
     internal lateinit var buttonlogout: Button
@@ -39,9 +39,12 @@ class InfoActivity3 : AppCompatActivity() {
 
         buttonlogout = findViewById<View>(R.id.Logout) as Button
 
+        target = intent.getParcelableExtra("TargetStudent")
 
         buttonBack.setOnClickListener {
-            startActivity(Intent(this, InfoActivity::class.java))
+            val intent = Intent(this, InfoActivity::class.java)
+            intent.putExtra("TargetStudent", target)
+            startActivity(intent)
         }
 
         compo1a.setOnClickListener{

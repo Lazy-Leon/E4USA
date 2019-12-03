@@ -13,8 +13,9 @@ import com.google.firebase.auth.FirebaseAuth
 
 class ProjectPageActivityActivity : AppCompatActivity() {
 
-    internal lateinit var buttonInfo: Button
-    internal lateinit var buttonSwitchTeams: Button
+    private lateinit var buttonInfo: Button
+    private lateinit var buttonSwitchTeams: Button
+    private lateinit var buttonLogout: Button
 
 
     internal lateinit var buttonStepa: Button
@@ -31,17 +32,6 @@ class ProjectPageActivityActivity : AppCompatActivity() {
     internal lateinit var buttonStepl: Button
 
 
-
-
-
-
-
-
-
-
-
-
-
     private lateinit var textCourse: TextView
     private lateinit var textName: TextView
     private lateinit var textCreate: TextView
@@ -51,19 +41,23 @@ class ProjectPageActivityActivity : AppCompatActivity() {
 
     private var mAuth: FirebaseAuth? = null
 
-    private lateinit var studentproject: Project
-
+    private lateinit var studentproject: Student
+    private lateinit var project: Project
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_project)
 
-        studentproject = intent.getParcelableExtra<Project>("projinfo")
-
+        project = intent.getParcelableExtra<Project>("projinfo")
+        val temp:Student?  = intent.getParcelableExtra("something")
+        if (temp != null) {
+            studentproject = temp
+        }
         mAuth = FirebaseAuth.getInstance()
 
         buttonSwitchTeams = findViewById<View>(R.id.buttonswitchUser) as Button
         buttonInfo = findViewById<View>(R.id.buttonswitchUser) as Button
+        buttonLogout = findViewById<View>(R.id.Logout) as Button
         textCourse = findViewById<TextView>(R.id.CourseText) as TextView
         textName = findViewById<TextView>(R.id.NameText) as TextView
         textCreate = findViewById<TextView>(R.id.CreatedText) as TextView
@@ -86,19 +80,25 @@ class ProjectPageActivityActivity : AppCompatActivity() {
 
 
         buttonInfo.setOnClickListener {
-            startActivity(Intent(applicationContext, InfoActivity::class.java))
+            startActivity(Intent(this, InfoActivity::class.java))
         }
 
         buttonSwitchTeams.setOnClickListener {
-            startActivity(Intent(applicationContext, DashboardActivity::class.java))
+            val intent = Intent(this, DashboardActivity::class.java)
+            intent.putExtra("TargetStudent",studentproject)
+            startActivity(intent)
         }
 
-        textCourse.setText(studentproject.Course)
-        textName.setText(studentproject.Name)
-        textCreate.setText(studentproject.Created)
-        textDue.setText(studentproject.Due)
-        textGrade.setText(studentproject.Grade)
-        textSubmit.setText(studentproject.Submitted)
+        buttonLogout.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+
+        textCourse.setText(project.Course)
+        textName.setText(project.Name)
+        textCreate.setText(project.Created)
+        textDue.setText(project.Due)
+        textGrade.setText(project.Grade)
+        textSubmit.setText(project.Submitted)
 
         buttonStepa.setOnClickListener{
             val dialogBuilder = AlertDialog.Builder(this)

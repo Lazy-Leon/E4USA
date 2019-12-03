@@ -46,17 +46,6 @@
             android:text="Back"
             android:textColor="#E18AD5F7" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/buttonswitchUser"
-            android:layout_weight="1"
-            android:background="#d4d1d4"
-            android:drawableLeft="@drawable/ic_arrow_back_red_24dp"
-            android:text="Back"
-            android:textColor="#ff0000" />
-
 
     </LinearLayout>
 
@@ -154,6 +143,18 @@
                 android:layout_height="43dp" />
         </TableRow>
     </TableLayout>
+
+    <Button
+        android:id="@+id/Logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="top|right"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/transparent"
+        android:text="Logout"
+        android:textColor="#4CAF50"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

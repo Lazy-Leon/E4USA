@@ -19,6 +19,7 @@ class InfoActivity4 : AppCompatActivity() {
 
     internal lateinit var buttonlogout: Button
 
+    private var target: Student ?= null
 
     //internal lateinit var buttonBack: Button
 
@@ -31,13 +32,16 @@ class InfoActivity4 : AppCompatActivity() {
         compo1b = findViewById<View>(R.id.compo1b) as ImageView
         compo1c = findViewById<View>(R.id.compo1c) as ImageView
 
+        target = intent.getParcelableExtra("TargetStudent")
 
         buttonlogout = findViewById<View>(R.id.Logout) as Button
 
         buttonBack = findViewById<View>(R.id.backbutton) as Button
 
         buttonBack.setOnClickListener {
-            startActivity(Intent(this, InfoActivity::class.java))
+            val intent = Intent(this, InfoActivity::class.java)
+            intent.putExtra("TargetStudent", target)
+            startActivity(intent)
         }
 
         compo1a.setOnClickListener{

@@ -12,35 +12,30 @@ import androidx.appcompat.app.AppCompatActivity
 
 class InfoActivity1 : AppCompatActivity() {
 
-    internal lateinit var buttonBack: Button
+    private lateinit var buttonBack: Button
     private lateinit var compo1a: ImageView
     private lateinit var compo1b: ImageView
     private lateinit var compo1c: ImageView
-
-    internal lateinit var buttonlogout: Button
-
-
-
-
-    //internal lateinit var buttonBack: Button
+    private var target: Student ?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_aboutcomp1)
 
+        target = intent.getParcelableExtra("TargetStudent")
+
         buttonBack = findViewById<View>(R.id.backbutton) as Button
 
         buttonBack.setOnClickListener {
-            startActivity(Intent(this, InfoActivity::class.java))
+            val intent = Intent(this, InfoActivity::class.java)
+            intent.putExtra("TargetStudent", target)
+            startActivity(intent)
         }
 
         compo1a = findViewById<View>(R.id.compo1a) as ImageView
         compo1b = findViewById<View>(R.id.compo1b) as ImageView
         compo1c = findViewById<View>(R.id.compo1c) as ImageView
-
-
-        buttonlogout = findViewById<View>(R.id.Logout) as Button
 
 
         compo1a.setOnClickListener{
@@ -100,11 +95,6 @@ class InfoActivity1 : AppCompatActivity() {
             val alert = dialogBuilder.create()
             alert.show()
 
-        }
-
-        buttonlogout.setOnClickListener{
-
-            startActivity(Intent(applicationContext, MainActivity::class.java))
         }
 
     }
