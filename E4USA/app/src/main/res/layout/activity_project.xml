@@ -183,7 +183,7 @@
             android:layout_gravity="top|right"
             android:layout_marginEnd="-2dp"
             android:background="#FFFFFFFF"
-            android:text="Logout"
+            android:text="About"
             android:textColor="#FF5AEB38"
             android:textStyle="bold" />
 

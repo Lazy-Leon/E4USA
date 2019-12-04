@@ -58,7 +58,7 @@ class ProjectPageActivityActivity : AppCompatActivity() {
 
         name = findViewById<View>(R.id.Name) as TextView
         buttonSwitchTeams = findViewById<View>(R.id.buttonswitchUser) as Button
-        buttonInfo = findViewById<View>(R.id.buttonswitchUser) as Button
+        buttonInfo = findViewById<View>(R.id.About) as Button
         buttonLogout = findViewById<View>(R.id.Logout) as Button
         textCourse = findViewById<TextView>(R.id.CourseText) as TextView
         textName = findViewById<TextView>(R.id.NameText) as TextView
@@ -83,7 +83,9 @@ class ProjectPageActivityActivity : AppCompatActivity() {
         name.setText(project.Name)
 
         buttonInfo.setOnClickListener {
-            startActivity(Intent(this, InfoActivity::class.java))
+            val intent = Intent(this, InfoActivity::class.java)
+            intent.putExtra("TargetStudent", studentproject)
+            startActivity(intent)
         }
 
         buttonSwitchTeams.setOnClickListener {
@@ -92,7 +94,12 @@ class ProjectPageActivityActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        buttonLogout.setOnClickListener {
+        buttonLogout.setOnClickListener{
+            Toast.makeText(
+                this,
+                "Logout Successfully",
+                Toast.LENGTH_LONG
+            ).show()
             startActivity(Intent(this, MainActivity::class.java))
         }
 
