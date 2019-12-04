@@ -30,6 +30,10 @@
         <activity android:name=".InfoActivity4" />
         <activity android:name=".ProjectPageActivityActivity" />
         <activity android:name=".ProfileActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

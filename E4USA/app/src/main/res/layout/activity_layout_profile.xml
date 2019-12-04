@@ -1,20 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9ED8F3"
+    android:background="#FFFFFF"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
+    <RelativeLayout
+        android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="95dp"
-        android:backgroundTint="#9C27B0"
-        android:gravity="center|center_horizontal"
-        android:text="My Profile Page"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColor="#E91E63" />
+        android:layout_height="76dp"
+        android:layout_alignParentTop="true"
+        android:background="#419EFE"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="173dp"
+            android:layout_height="52dp"
+            android:layout_alignParentStart="true"
+
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="80dp"
+            android:layout_toStartOf="@+id/Logout"
+            android:fontFamily="@font/hind_bold"
+            android:gravity="center"
+            android:text="About Me"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="top|right"
+            android:layout_marginEnd="8dp"
+            android:background="#419EFE"
+            android:text="Logout"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="84dp"
+            android:layout_height="50dp"
+            android:layout_alignEnd="@+id/Name"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-6dp"
+            android:layout_marginEnd="159dp"
+            android:layout_marginBottom="15dp"
+            app:srcCompat="@drawable/icon1" />
+
+    </RelativeLayout>
 
 
     <ImageView
@@ -25,7 +69,7 @@
         android:layout_alignTop="@+id/mLlayoutBottomButtons"
         android:layout_marginTop="-524dp"
         android:layout_marginBottom="340dp"
-        tools:srcCompat="@tools:sample/avatars[14]" />
+        tools:srcCompat="@drawable/dog" />
 
     <LinearLayout
         android:id="@+id/mLlayoutBottomButtons"
@@ -40,10 +84,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/buttonswitchUser"
             android:layout_weight="1"
-            android:background="#4CAF50"
+            android:background="#5AEB38"
             android:drawableLeft="@drawable/ic_arrow_back_red_24dp"
             android:text="Back"
-            android:textColor="#E18AD5F7" />
+            android:textColor="#E0FFFFFF" />
 
         <Button
             android:id="@+id/Logout"
@@ -52,23 +96,23 @@
             android:layout_alignParentEnd="true"
             android:layout_gravity="top|right"
             android:layout_marginEnd="-2dp"
-            android:background="#BCFFFC"
+            android:background="#FFFFFFFF"
             android:text="Logout"
-            android:textColor="#4CAF50"
+            android:textColor="#5AEB38"
             android:textStyle="bold" />
-
-
 
 
     </LinearLayout>
 
     <TableLayout
-        android:layout_width="311dp"
-        android:layout_height="260dp"
+        android:layout_width="wrap_content"
+        android:layout_height="267dp"
         android:layout_above="@+id/mLlayoutBottomButtons"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="-30dp"
-        android:layout_marginBottom="45dp">
+        android:layout_marginStart="118dp"
+        android:layout_marginEnd="-38dp"
+        android:layout_marginBottom="42dp">
 
         <TableRow
             android:layout_width="match_parent"
@@ -78,7 +122,9 @@
                 android:id="@+id/textView21"
                 android:layout_width="61dp"
                 android:layout_height="match_parent"
-                android:text="Student" />
+                android:fontFamily="@font/hind_bold"
+                android:text="Student"
+                android:textColor="#FF000000" />
 
             <Space
                 android:layout_width="26dp"
@@ -88,7 +134,9 @@
                 android:id="@+id/student"
                 android:layout_width="131dp"
                 android:layout_height="43dp"
-                android:text="TextView" />
+                android:fontFamily="@font/hind_bold"
+                android:text="TextView"
+                android:textColor="#FF000000" />
 
             <Space
                 android:layout_width="28dp"
@@ -103,7 +151,9 @@
                 android:id="@+id/textView22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username" />
+                android:fontFamily="@font/hind_bold"
+                android:text="Username"
+                android:textColor="#FF000000" />
 
             <Space
                 android:layout_width="18dp"
@@ -113,7 +163,9 @@
                 android:id="@+id/username"
                 android:layout_width="131dp"
                 android:layout_height="43dp"
-                android:text="TextView" />
+                android:fontFamily="@font/hind_bold"
+                android:text="TextView"
+                android:textColor="#FF000000" />
         </TableRow>
 
         <TableRow
@@ -124,7 +176,9 @@
                 android:id="@+id/textView24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email" />
+                android:fontFamily="@font/hind_bold"
+                android:text="Email"
+                android:textColor="#FF000000" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -133,7 +187,9 @@
             <TextView
                 android:id="@+id/email"
                 android:layout_width="131dp"
-                android:layout_height="43dp" />
+                android:layout_height="43dp"
+                android:fontFamily="@font/hind_bold"
+                android:textColor="#FF000000" />
         </TableRow>
 
         <TableRow
@@ -144,7 +200,9 @@
                 android:id="@+id/textView26"
                 android:layout_width="71dp"
                 android:layout_height="match_parent"
-                android:text="Teams" />
+                android:fontFamily="@font/hind_bold"
+                android:text="Teams"
+                android:textColor="#FF000000" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -153,7 +211,9 @@
             <TextView
                 android:id="@+id/teams"
                 android:layout_width="131dp"
-                android:layout_height="43dp" />
+                android:layout_height="43dp"
+                android:fontFamily="@font/hind_bold"
+                android:textColor="#FF000000" />
         </TableRow>
     </TableLayout>
 

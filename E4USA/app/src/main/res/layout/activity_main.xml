@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,10 +9,18 @@
     android:padding="16dp"
     tools:context=".LoginActivity">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        app:srcCompat="@drawable/icon1" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MyDesign Login"/>
+        android:fontFamily="@font/hind_bold"
+        android:text="MyDesign Login"
+        android:textColor="#45AFFD" />
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
@@ -28,21 +37,42 @@
         android:inputType="textPassword"
         android:importantForAutofill="no" />
 
-    <Button
-        android:id="@+id/login"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Register" />
+        <Button
+            android:id="@+id/login"
+            android:layout_width="166dp"
+            android:layout_height="wrap_content"
+            android:background="#FFD4007A"
+            android:fontFamily="@font/hind_bold"
+            android:text="Login"
+            android:textColor="#FFFFFFFF" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/hind_bold"
+            android:text="Or please make an account below:"
+            android:textColor="#FF45AFFD" />
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="166dp"
+            android:layout_height="wrap_content"
+            android:background="#FFD4007A"
+            android:fontFamily="@font/hind_bold"
+            android:text="Register"
+            android:textColor="#FFFFFFFF" />
+    </LinearLayout>
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone" />
+
 </LinearLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
@@ -7,20 +8,27 @@
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="76dp"
         android:layout_alignParentTop="true"
-        android:background="#E91E63"
+        android:background="#419EFE"
         android:gravity="center">
 
         <TextView
             android:id="@+id/Name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_width="173dp"
+            android:layout_height="52dp"
+            android:layout_alignParentStart="true"
 
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="62dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="80dp"
+            android:layout_toStartOf="@+id/Logout"
+            android:fontFamily="@font/hind_bold"
+            android:gravity="center"
             android:text="Projects"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="#8CC8EA"
+            android:textColor="#FFFFFF"
             android:textSize="36sp"
             android:textStyle="bold" />
 
@@ -30,11 +38,19 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_gravity="top|right"
-            android:layout_marginEnd="-2dp"
-            android:background="#BCFFFC"
+            android:layout_marginEnd="8dp"
+            android:background="#419EFE"
             android:text="Logout"
-            android:textColor="#4CAF50"
+            android:textColor="#FFFFFF"
             android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="84dp"
+            android:layout_height="50dp"
+            android:layout_alignEnd="@+id/Name"
+            android:layout_marginEnd="153dp"
+            app:srcCompat="@drawable/icon1" />
 
     </RelativeLayout>
 
@@ -48,38 +64,41 @@
         <Button
             android:id="@+id/buttonswitchUser"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_below="@id/buttonswitchUser"
             android:layout_weight="1"
-            android:background="#E91E63"
+            android:background="#47E632"
             android:drawableLeft="@drawable/ic_dashboard_black_24dp"
+            android:fontFamily="@font/hind_bold"
             android:text="Dashboard"
-            android:textColor="#8CC8EA"
+            android:textColor="#FFFFFF"
             android:textSize="14sp"
             tools:textStyle="bold" />
 
         <Button
             android:id="@+id/About"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="59dp"
             android:layout_below="@id/buttonInfo"
             android:layout_weight="1"
-            android:background="#E91E63"
+            android:background="#E4007A"
             android:drawableLeft="@drawable/ic_about_black_24dp"
+            android:fontFamily="@font/hind_bold"
             android:text="About"
-            android:textColor="#8CC8EA"
+            android:textColor="#FFFFFF"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/profileb"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="59dp"
             android:layout_below="@id/profileb"
             android:layout_weight="1"
-            android:background="#E91E63"
+            android:background="#47E632"
             android:drawableLeft="@drawable/ic_about_black_24dp"
+            android:fontFamily="@font/hind_bold"
             android:text="My Profile"
-            android:textColor="#8CC8EA"
+            android:textColor="#FFFFFFFF"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -87,11 +106,12 @@
 
     <ListView
         android:id="@+id/listViewProjects"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/header"
+        android:layout_width="401dp"
+        android:layout_height="546dp"
         android:layout_above="@+id/mLlayoutBottomButtons"
-        />
+        android:layout_below="@+id/header"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="22dp" />
 
 
 </RelativeLayout>

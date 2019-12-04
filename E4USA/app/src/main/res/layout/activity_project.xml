@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rl_Container"
     android:layout_width="match_parent"
@@ -120,7 +121,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:background="#DF008C "
+        android:background="#45AFFD"
         android:gravity="center">
 
         <Button
@@ -131,19 +132,29 @@
             android:layout_gravity="top|right"
             android:layout_marginEnd="8dp"
             android:background="#BCFFFC "
+            android:fontFamily="@font/hind_bold"
             android:text="Logout"
-            android:textColor="#ff0000" />
+            android:textColor="#45AFFD" />
 
         <TextView
             android:id="@+id/Name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_marginEnd="144dp"
 
+            android:layout_toStartOf="@+id/Logout"
+            android:fontFamily="@font/hind_bold"
+            android:gravity="center"
             android:text="Project"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@android:color/white"
             android:textSize="36sp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="59dp"
+            android:layout_height="43dp"
+            app:srcCompat="@drawable/icon1" />
     </RelativeLayout>
 
     <LinearLayout
@@ -152,17 +163,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:gravity="center|bottom">
-        
+
         <Button
             android:id="@+id/buttonswitchUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/buttonswitchUser"
             android:layout_weight="1"
-            android:background="#4CAF50"
+            android:background="#5AEB38"
             android:drawableLeft="@drawable/ic_arrow_back_red_24dp"
             android:text="Back"
-            android:textColor="#E18AD5F7" />
+            android:textColor="#FFFFFF" />
 
         <Button
             android:id="@+id/About"
@@ -171,9 +182,9 @@
             android:layout_alignParentEnd="true"
             android:layout_gravity="top|right"
             android:layout_marginEnd="-2dp"
-            android:background="#BCFFFC"
+            android:background="#FFFFFFFF"
             android:text="Logout"
-            android:textColor="#4CAF50"
+            android:textColor="#FF5AEB38"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -187,6 +198,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="163dp"
         android:layout_marginTop="135dp"
+        android:background="#FFD4007A"
         android:text="Step B" />
 
     <TextView
@@ -207,6 +219,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="136dp"
         android:layout_marginEnd="52dp"
+        android:background="#FFD4007A"
         android:text="Step C" />
 
     <Button
@@ -217,6 +230,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="47dp"
         android:layout_marginTop="206dp"
+        android:background="#FFD4007A"
         android:text="Step D" />
 
     <Button
@@ -227,6 +241,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="202dp"
         android:layout_marginEnd="52dp"
+        android:background="#FFD4007A"
         android:text="Step F" />
 
     <Button
@@ -238,6 +253,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="163dp"
         android:layout_marginTop="204dp"
+        android:background="#FFD4007A"
         android:text="Step E" />
 
     <Button
@@ -249,6 +265,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="164dp"
         android:layout_marginTop="271dp"
+        android:background="#FFD4007A"
         android:text="Step H" />
 
     <Button
@@ -259,6 +276,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="272dp"
         android:layout_marginEnd="52dp"
+        android:background="#FFD4007A"
         android:text="Step I" />
 
     <Button
@@ -269,6 +287,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="47dp"
         android:layout_marginTop="269dp"
+        android:background="#FFD4007A"
         android:text="Step G" />
 
     <Button
@@ -279,6 +298,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="54dp"
         android:layout_marginBottom="210dp"
+        android:background="#FFD4007A"
         android:text="Step L" />
 
     <Button
@@ -289,6 +309,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="47dp"
         android:layout_marginBottom="212dp"
+        android:background="#FFD4007A"
         android:text="Step J" />
 
     <Button
@@ -300,6 +321,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="161dp"
         android:layout_marginBottom="213dp"
+        android:background="#FFD4007A"
         android:text="Step K" />
 
     <Button
@@ -310,6 +332,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="47dp"
         android:layout_marginTop="137dp"
+        android:background="#FFD4007A"
         android:text="Step A" />
 
 </RelativeLayout>
